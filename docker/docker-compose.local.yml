@@ -1,0 +1,60 @@
+version: "3"
+
+services:
+  link-box-api:
+    image: link-box/api
+    container_name: link-box-api
+    build:
+      context: ../
+      dockerfile: docker/api/Dockerfile
+    ports:
+      - 8302:8302
+    cap_add:
+      - SYS_NICE
+    links:
+      - link-box-mysql
+    tty: true
+    volumes:
+      - ../backend:/backend
+    depends_on:
+      - link-box-mysql
+    networks:
+      # ここに指定するのは実際のネットワーク名ではなく、↓のnetworksの識別子
+      - container-link
+
+  link-box-mysql:
+    image: link-box/mysql
+    platform: linux/x86_64
+    container_name: link-box-mysql
+    build:
+      context: ../
+      dockerfile: docker/database/Dockerfile
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: link-box
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: link-box
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+    healthcheck:
+      test: 'MYSQL_PWD=password mysql -utestuser -h127.0.0.1 -e "quit"'
+      interval: 2s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+    networks:
+      # ここに指定するのは実際のネットワーク名ではなく、↓のnetworksの識別子
+      - container-link
+
+volumes:
+  mysql-data:
+
+networks:
+  default:
+    external:
+      name: bridge
+  container-link:
+    # これが作成されるネットワーク名（同名がなければ自動生成される）
+    name: link-box.internal
