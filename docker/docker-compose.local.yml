@@ -28,7 +28,7 @@ services:
     container_name: link-box-mysql
     build:
       context: ../
-      dockerfile: docker/database/Dockerfile
+      dockerfile: ../database/Dockerfile
     ports:
       - "3309:3306"
     environment:
