@@ -3,9 +3,6 @@ package main
 import (
 	"embed"
 
-	"github.com/Ryoto-kubo/link-box/backend/config"
-	"github.com/Ryoto-kubo/link-box/backend/logger"
-	"github.com/Ryoto-kubo/link-box/backend/repository"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,11 +13,11 @@ var yamlFile embed.FS
 var zapYamlFile embed.FS
 
 func main() {
-	conf, env := config.LoadAppConfig(yamlFile)
-	logger := logger.InitLogger(env, zapYamlFile)
-	logger.GetZapLogger().Infof("Loaded this configuration : application." + env + ".yml")
+	// conf, env := config.LoadAppConfig(yamlFile)
+	// logger := logger.InitLogger(env, zapYamlFile)
+	// logger.GetZapLogger().Infof("Loaded this configuration : application." + env + ".yml")
 
-	rep := repository.NewLinkBoxRepository(logger, conf)
+	// rep := repository.NewLinkBoxRepository(logger, conf)
 
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
@@ -29,5 +26,5 @@ func main() {
 		})
 	})
 
-	r.Run(":8032")
+	r.Run(":8302")
 }
