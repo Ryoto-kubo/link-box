@@ -3,6 +3,7 @@
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
+    "plugin:import/resolver",
     "prettier"
   ],
   "rules": {
