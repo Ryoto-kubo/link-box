@@ -1,7 +1,7 @@
 FROM mysql:8.0.28
 
 # copy conf file
-COPY ./docker/database/conf.d /etc/database/conf.d
+COPY ./database/conf.d /etc/database/conf.d
 
 # Set debian default locale to ja_JP.UTF-8
 RUN apt-get update && \

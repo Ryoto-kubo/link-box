@@ -6,7 +6,7 @@ services:
     container_name: link-box-api
     build:
       context: ../
-      dockerfile: docker/api/Dockerfile
+      dockerfile: backend/Dockerfile
     ports:
       - 8302:8302
     cap_add:
@@ -28,7 +28,7 @@ services:
     container_name: link-box-mysql
     build:
       context: ../
-      dockerfile: ../database/Dockerfile
+      dockerfile: database/Dockerfile
     ports:
       - "3309:3306"
     environment:
