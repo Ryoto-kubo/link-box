@@ -10,9 +10,19 @@
     "import/order": [
       "error",
       {
-        "alphabetize": {
-          "order": "asc"
-        }
+        "alphabetize": { "caseInsensitive": true, "order": "asc" },
+        "groups": [
+          "builtin",
+          "external",
+          "type",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "index"
+        ],
+        "newlines-between": "always",
+        "pathGroups": [{ "group": "internal", "pattern": "@src/**", "position": "before" }],
+        "pathGroupsExcludedImportTypes": ["builtin"]
       }
     ]
   }
