@@ -8,7 +8,12 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "cd ../../ && husky install frontend/user/.husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.--write": "prettier --write"
   },
   "dependencies": {
     "@types/node": "20.6.3",
@@ -24,6 +29,8 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3"
   }
 }
