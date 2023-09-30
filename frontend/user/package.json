@@ -6,14 +6,20 @@
     "dev": "next dev -p 3301",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --dir src",
-    "lint:fix": "yarn lint --fix",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "prepare": "cd ../../ && husky install frontend/user/.husky"
+    "prepare": "cd ../../ && husky install frontend/user/.husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix",
-    "*.--write": "prettier --write"
+    "*.{ts,tsx}": [
+      "npm run lint",
+      "npm run format",
+      "npm run lint:fix"
+    ]
   },
   "dependencies": {
     "@types/node": "20.6.3",
@@ -28,9 +34,21 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.5",
+    "@storybook/addon-interactions": "^7.4.5",
+    "@storybook/addon-links": "^7.4.5",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.5",
+    "@storybook/nextjs": "^7.4.5",
+    "@storybook/react": "^7.4.5",
+    "@storybook/testing-library": "^0.2.1",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-storybook": "^0.6.14",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "storybook": "^7.4.5"
   }
 }

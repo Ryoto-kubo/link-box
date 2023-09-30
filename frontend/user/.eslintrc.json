@@ -3,14 +3,22 @@
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
-    "plugin:import/resolver",
+    "plugin:storybook/recommended",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
   "rules": {
     "import/order": [
       "error",
       {
-        "alphabetize": { "caseInsensitive": true, "order": "asc" },
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
         "groups": [
           "builtin",
           "external",
@@ -21,7 +29,13 @@
           "index"
         ],
         "newlines-between": "always",
-        "pathGroups": [{ "group": "internal", "pattern": "@src/**", "position": "before" }],
+        "pathGroups": [
+          {
+            "group": "internal",
+            "pattern": "@src/**",
+            "position": "before"
+          }
+        ],
         "pathGroupsExcludedImportTypes": ["builtin"]
       }
     ]
