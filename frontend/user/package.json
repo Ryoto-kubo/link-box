@@ -9,6 +9,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "test": "jest",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "prepare": "cd ../../ && husky install frontend/user/.husky",
     "storybook": "storybook dev -p 6006",
@@ -18,7 +19,8 @@
     "*.{ts,tsx}": [
       "npm run lint",
       "npm run format",
-      "npm run lint:fix"
+      "npm run lint:fix",
+      "npm test --findRelatedTests"
     ]
   },
   "dependencies": {
@@ -41,6 +43,10 @@
     "@storybook/nextjs": "^7.4.5",
     "@storybook/react": "^7.4.5",
     "@storybook/testing-library": "^0.2.1",
+    "@testing-library/jest-dom": "^6.1.3",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.5",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -49,6 +55,9 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-storybook": "^0.6.14",
     "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "storybook": "^7.4.5"
