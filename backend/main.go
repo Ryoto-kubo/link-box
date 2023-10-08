@@ -17,7 +17,7 @@ var zapYamlFile embed.FS
 type User struct {
 	gorm.Model
 	Id  int `gorm:"primaryKey" json:"id"`
-	Name string `json:"name"`
+	UserName string `json:"user_name"`
 	Email string `json:"email"`
 	Password string `json:"password"`
 }
@@ -30,7 +30,7 @@ func main() {
 
 	// rep := repository.NewLinkBoxRepository(logger, conf)
 
-	dsn := "testuser:password@tcp(link-box-mysql:3306)/link-box?charset=utf8&parseTime=true"
+	dsn := "testuser:password@tcp(34.146.157.227)/link-box?charset=utf8&parseTime=true"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
