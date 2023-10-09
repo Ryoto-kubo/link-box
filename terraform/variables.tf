@@ -10,3 +10,9 @@ variable "vpc_name" {
 variable "vpc_access_connector_name" {
   type = string
 }
+variable "sql_database_name" {
+  type = string
+}
+variable "cloud_run_name" {
+  type = string
+}

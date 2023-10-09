@@ -35,7 +35,7 @@ resource "google_project_iam_member" "vpc_connector_admin" {
 }
 
 
-# VPCネットワーク ピアリングの作成
+# ------ Service Networking Connection ------
 resource "google_service_networking_connection" "private_vpc_connection" {
   network                 = google_compute_network.vpc.self_link
   service                 = "servicenetworking.googleapis.com"
@@ -43,7 +43,7 @@ resource "google_service_networking_connection" "private_vpc_connection" {
 }
 
 
-# プライベートサービスアクセスの定義(IP範囲は 10.20.0.0/16)
+# ------ Compute Global Address ------
 resource "google_compute_global_address" "private_ip_address" {
   name          = "private-ip-address"
   purpose       = "VPC_PEERING"
@@ -96,7 +96,7 @@ resource "google_project_iam_member" "cloud_sql_admin" {
 
 // ------ Cloud Run ------
 resource "google_cloud_run_service" "default" {
-  name     = "cloudrun-srv"
+  name     = var.cloud_run_name
   location = var.region
 
   # template {
@@ -140,10 +140,10 @@ resource "google_cloud_run_service" "default" {
     }
     metadata {
       annotations = {
-        "autoscaling.knative.dev/maxScale"      = "5"
-        "run.googleapis.com/cloudsql-instances" = google_sql_database_instance.default.connection_name
+        "autoscaling.knative.dev/maxScale"        = "5"
+        "run.googleapis.com/cloudsql-instances"   = google_sql_database_instance.default.connection_name
         "run.googleapis.com/vpc-access-connector" = google_vpc_access_connector.connector.name
-        "run.googleapis.com/client-name"        = "terraform"
+        "run.googleapis.com/client-name"          = "terraform"
       }
     }
   }
