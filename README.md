@@ -33,3 +33,9 @@ $ migrate --path database/migrations --database 'mysql://testuser:password@tcp(0
 $ cd frontend/user
 $ npm run dev
 ```
+
+## Database connect
+
+```
+$ ./cloud_sql_proxy -instances=link-box-stg-400005:asia-northeast1:link-box-instance-stg=tcp:3307
+```

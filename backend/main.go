@@ -30,7 +30,7 @@ func main() {
 
 	// rep := repository.NewLinkBoxRepository(logger, conf)
 
-	dsn := "testuser:password@tcp(34.146.157.227)/link-box?charset=utf8&parseTime=true"
+	dsn := "testuser:password@tcp(10.20.0.7)/link-box?charset=utf8&parseTime=true"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")

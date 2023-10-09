@@ -3,7 +3,6 @@ provider "google" {
   credentials = file("/Users/kuboryoto/.config/gcloud/configurations/link-box-stg-400005-3907b2faee93.json")
   zone    = "us-central1-c"
 }
-
 provider "google-beta" {
   project     = var.project_id
   credentials = file("/Users/kuboryoto/.config/gcloud/configurations/link-box-stg-400005-3907b2faee93.json")
@@ -56,7 +55,7 @@ resource "google_compute_global_address" "private_ip_address" {
 
 // ------ Cloud SQL ------
 resource "google_sql_database_instance" "default" {
-  name             = "link-box-instance"
+  name             = var.db_dinstance_name
   region           = var.region
   database_version = "MYSQL_8_0_31"
   root_password    = "link-box"
@@ -64,13 +63,6 @@ resource "google_sql_database_instance" "default" {
 
   settings {
     tier      = "db-f1-micro"
-
-    # ip_configuration {
-    #   authorized_networks {
-    #     value           = "0.0.0.0/0"
-    #     name            = "all"
-    #   }
-    # }
     ip_configuration {
       private_network = google_compute_network.vpc.id
     }
@@ -99,16 +91,6 @@ resource "google_cloud_run_service" "default" {
   name     = var.cloud_run_name
   location = var.region
 
-  # template {
-  #   spec {
-  #     containers {
-  #       image = "gcr.io/cloudrun/hello"
-  #       ports {
-  #         container_port = 8302
-  #       }
-  #     }
-  #   }
-  # }
   template {
     spec {
       containers {
