@@ -1,17 +1,16 @@
-name: Migration
+name: Migration For Stg
 
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
       - database/migrations/**
-      - .github/workflows/migration.yml
+      - .github/workflows/migration-stg.yml
 env:
   PROXY_IMAGE: gcr.io/cloudsql-docker/gce-proxy
-  # CLOUDSQL_INSTANCE_CONNECTION_NAME: link-box-stg-400005:asia-northeast1:link-box-instance-stg
-  CLOUDSQL_INSTANCE_CONNECTION_NAME: ${{ secrets.GCP_PROJECT }}:${{ secrets.GCP_REGION }}:${{ secrets.CLOUDSQL_INSTANCE }}
-  MYSQL_DSN: mysql://${{ secrets.MYSQL_USER }}:${{ secrets.MYSQL_PASSWORD }}@tcp(127.0.0.1:3306)/${{ secrets.MYSQL_DATABASE }}
+  CLOUDSQL_INSTANCE_CONNECTION_NAME: ${{ secrets.GCP_PROJECT_STG }}:${{ secrets.GCP_REGION_STG }}:${{ secrets.CLOUDSQL_INSTANCE_STG }}
+  MYSQL_DSN: mysql://${{ secrets.MYSQL_USER_STG }}:${{ secrets.MYSQL_PASSWORD_STG }}@tcp(127.0.0.1:3306)/${{ secrets.MYSQL_DATABASE_STG }}
 
 jobs:
   migrate-db:
