@@ -10,8 +10,8 @@ on:
 
 env:
   PROXY_IMAGE: gcr.io/cloudsql-docker/gce-proxy
-  CLOUDSQL_INSTANCE_CONNECTION_NAME: link-box-stg-400005:asia-northeast1:link-box-instance-stg
-  # CLOUDSQL_INSTANCE_CONNECTION_NAME: ${{ secrets.GCP_PROJECT }}:${{ secrets.GCP_REGION }}:${{ secrets.CLOUDSQL_INSTANCE }}
+  # CLOUDSQL_INSTANCE_CONNECTION_NAME: link-box-stg-400005:asia-northeast1:link-box-instance-stg
+  CLOUDSQL_INSTANCE_CONNECTION_NAME: ${{ secrets.GCP_PROJECT }}:${{ secrets.GCP_REGION }}:${{ secrets.CLOUDSQL_INSTANCE }}
   MYSQL_DSN: mysql://${{ secrets.MYSQL_USER }}:${{ secrets.MYSQL_PASSWORD }}@tcp(127.0.0.1:3306)/${{ secrets.MYSQL_DATABASE }}
 
 jobs:
