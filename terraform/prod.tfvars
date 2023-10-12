@@ -1,0 +1,6 @@
+project_id = "link-box-prod-400005"
+region = "asia-northeast1"
+vpc_name = "link-box-vpc-prod"
+vpc_access_connector_name = "link-box-connector-prod"
+db_dinstance_name = "link-box-instance-prod"
+cloud_run_name = "link-box-cloud-run-prod"
