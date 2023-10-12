@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - database/migrations/**
-      - .github/workflows/migration.yaml
+      - .github/workflows/migration.yml
 
 env:
   PROXY_IMAGE: gcr.io/cloudsql-docker/gce-proxy
