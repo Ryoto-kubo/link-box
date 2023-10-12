@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - database/migrations/**
+      - .github/workflows/migration.yaml
 
 env:
   PROXY_IMAGE: gcr.io/cloudsql-docker/gce-proxy
@@ -12,13 +15,13 @@ env:
 
 jobs:
   migrate-db:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: database
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Start Cloud SQL Proxy
         run: |
