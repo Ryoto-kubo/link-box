@@ -29,6 +29,7 @@ func main() {
 	// logger.GetZapLogger().Infof("Loaded this configuration : application." + env + ".yml")
 
 	// rep := repository.NewLinkBoxRepository(logger, conf)
+	//
 
 	dsn := "testuser:password@tcp(10.20.0.7)/link-box?charset=utf8&parseTime=true"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
