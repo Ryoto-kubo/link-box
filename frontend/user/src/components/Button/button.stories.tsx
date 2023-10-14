@@ -2,7 +2,7 @@ import { MdAdd } from 'react-icons/md';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '.';
+import { Button } from './button';
 
 const meta: Meta<typeof Button> = {
   component: Button,

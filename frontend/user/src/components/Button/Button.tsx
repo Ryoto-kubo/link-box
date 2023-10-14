@@ -11,7 +11,7 @@ import {
   start,
   end,
 } from './styles.css';
-import { ButtonProps } from './type';
+import { ButtonProps } from './type.js';
 
 export const Button = ({
   text,

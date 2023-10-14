@@ -7,7 +7,7 @@ export const Page = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return { page };
+  return page;
 };
 
 export default Page;
