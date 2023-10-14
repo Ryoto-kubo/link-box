@@ -1,0 +1,3 @@
+./tools
+
+./backend/Dockerfile.stg.gcr
