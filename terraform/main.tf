@@ -95,14 +95,14 @@ resource "google_cloud_run_service" "default" {
   template {
     spec {
       containers {
-        # image = "asia-northeast1-docker.pkg.dev/link-box-stg-400005/link-box-repo/api-image/0411b7cc3015579dd769a96f65ce561ead72b12d7359de36b82ab76696266700"
-        # ports {
-        #   container_port = 8302
-        # }
-        image = "gcr.io/cloudrun/hello"
+        image = "asia-northeast1-docker.pkg.dev/link-box-stg-400005/link-box-repo/api-image:latest"
         ports {
           container_port = 8302
         }
+        # image = "gcr.io/cloudrun/hello"
+        # ports {
+        #   container_port = 8302
+        # }
         env {
           name  = "DB_HOST"
           value = google_sql_database_instance.default.connection_name
