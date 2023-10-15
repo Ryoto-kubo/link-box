@@ -2,6 +2,10 @@ import { globalStyle } from '@vanilla-extract/css';
 
 import { vars } from './theme.css';
 
+globalStyle('html, body', {
+  backgroundColor: vars.color.background,
+});
+
 globalStyle('button', {
   background: 'transparent',
   color: vars.color.textPrimaryMain,

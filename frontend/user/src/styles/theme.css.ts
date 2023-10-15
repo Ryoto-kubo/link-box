@@ -18,6 +18,8 @@ export const vars = createGlobalTheme(':root', {
 
     // Color
     white: 'rgba(255, 255, 255, 1)',
+
+    background: 'rgba(253,252,248, 1)',
   },
   font: {
     body: 'arial',
