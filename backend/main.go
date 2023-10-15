@@ -37,7 +37,6 @@ func main() {
 	dbPassword := os.Getenv("MYSQL_PASSWORD")
 	dbHost := os.Getenv("MYSQL_HOST")
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=true",dbUser, dbPassword, dbHost, dbName)
-		// dsn := "testuser:password@tcp(10.20.0.7)/link-box?charset=utf8&parseTime=true"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
