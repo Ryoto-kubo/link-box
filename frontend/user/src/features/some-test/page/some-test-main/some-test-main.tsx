@@ -6,7 +6,7 @@ export const SomeTestMain = () => {
   return (
     <div>
       <h1>SomeTestPage</h1>
-      <h2>h2</h2>
+      <h2>Test</h2>
       <Button
         text='button'
         color='error'
