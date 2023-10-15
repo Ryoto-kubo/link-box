@@ -29,16 +29,19 @@ jobs:
         name: "Authenticate to Google Cloud"
         uses: google-github-actions/auth@v1
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
+
+      - name: Setup Google Cloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: ">= 363.0.0"
+          project_id: ${{ secrets.GCP_PROJECT_STG }}
 
       - name: Configure docker for artifact registry
-        run: |
-          gcloud auth configure-docker asia-northeast1-docker.pkg.dev
+        run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
 
       - name: Build
-        run: |
-          docker build --platform linux/amd64 -f Dockerfile.stg.gcr -t asia-northeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_STG }}/link-box-repo/api-image:latest .
+        run: docker build --platform linux/amd64 -f Dockerfile.stg.gcr -t asia-northeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_STG }}/link-box-repo/api-image:latest .
 
       - name: Push
-        run: |
-          docker push asia-northeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_STG }}/link-box-repo/api-image:latest
+        run: docker push asia-northeast1-docker.pkg.dev/${{ secrets.GCP_PROJECT_STG }}/link-box-repo/api-image:latest
