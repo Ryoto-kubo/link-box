@@ -7,6 +7,9 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   pageExtensions: ['page.tsx'],
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);
