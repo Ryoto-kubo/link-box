@@ -1,0 +1,20 @@
+FROM golang:1.20-alpine
+
+ENV MYSQL_DATABASE=link-box
+ENV MYSQL_USER=testuser
+ENV MYSQL_PASSWORD=password
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_HOST=10.20.0.9
+
+WORKDIR /backend
+
+COPY ./ ./
+RUN go mod download
+
+# バイナリファイルにビルド
+RUN GOOS=linux GOARCH=amd64 go build -mod=readonly -v -o server
+
+EXPOSE 8302
+
+# バイナリファイルを実行
+CMD ./server
