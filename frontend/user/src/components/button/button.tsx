@@ -1,16 +1,6 @@
 import clsx from 'clsx';
 
-import {
-  primaryContained,
-  errorOutlined,
-  primaryOutlined,
-  primaryText,
-  errorText,
-  errorContained,
-  flex,
-  start,
-  end,
-} from './styles.css';
+import { buttonStyles, layouts } from './styles.css';
 import { ButtonProps } from './type.js';
 
 export const Button = ({
@@ -22,26 +12,17 @@ export const Button = ({
   endIcon,
   ...props
 }: ButtonProps) => {
-  const isIcon = startIcon || endIcon;
-
-  function getColorClass() {
-    if (color === 'primary' && variant === 'contained') return primaryContained;
-    if (color === 'error' && variant === 'contained') return errorContained;
-
-    if (color === 'primary' && variant === 'outlined') return primaryOutlined;
-    if (color === 'error' && variant === 'outlined') return errorOutlined;
-
-    if (color === 'primary' && variant === 'text') return primaryText;
-    if (color === 'error' && variant === 'text') return errorText;
-
-    return undefined;
-  }
+  const isIcon = !!startIcon || !!endIcon;
 
   return (
-    <button type={type} {...props} className={clsx(getColorClass(), isIcon && flex)}>
-      {startIcon && <div className={start}>{startIcon.icon}</div>}
+    <button
+      type={type}
+      {...props}
+      className={clsx(buttonStyles.color[color].variant[variant], isIcon && layouts.flex)}
+    >
+      {startIcon && <div className={buttonStyles.iconPosition.start}>{startIcon.icon}</div>}
       <div>{text}</div>
-      {endIcon && <div className={end}>{endIcon.icon}</div>}
+      {endIcon && <div className={buttonStyles.iconPosition.end}>{endIcon.icon}</div>}
     </button>
   );
 };
