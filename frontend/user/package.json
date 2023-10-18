@@ -13,7 +13,8 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "prepare": "cd ../../ && husky install frontend/user/.husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "hygen:component": "hygen new component"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -30,6 +31,7 @@
     "@vanilla-extract/css": "^1.13.0",
     "clsx": "^2.0.0",
     "eslint-config-next": "13.5.2",
+    "hygen": "^6.2.11",
     "next": "13.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
