@@ -1,10 +1,14 @@
 import { ReactNode } from 'react';
 
 export type FlexProps = {
-  children: ReactNode;
+  direction?: FlexDirection;
   alignItems: FlexAlignItems;
-  justifyContent: FlexJustifyContent;
+  justifyContent?: FlexJustifyContent;
+  className?: string;
+  children: ReactNode;
 };
+
+export type FlexDirection = 'row' | 'rowReverse' | 'column' | 'columnReverse';
 
 export type FlexAlignItems = 'center' | 'stretch' | 'flexStart' | 'flexEnd';
 
@@ -17,6 +21,9 @@ export type FlexJustifyContent =
 
 export type FlexStyles = {
   flex: string;
+  direction: {
+    [key in FlexDirection]: string;
+  };
   alignItems: {
     [key in FlexAlignItems]: string;
   };

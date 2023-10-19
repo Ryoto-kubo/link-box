@@ -4,6 +4,7 @@ import { vars } from './theme.css';
 
 globalStyle('html, body', {
   backgroundColor: vars.color.background,
+  fontFamily: vars.font.body,
 });
 
 globalStyle('button', {

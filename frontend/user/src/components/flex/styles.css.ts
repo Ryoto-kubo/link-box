@@ -6,6 +6,20 @@ export const flexStyles: FlexStyles = {
   flex: style({
     display: 'flex',
   }),
+  direction: {
+    row: style({
+      flexDirection: 'row',
+    }),
+    rowReverse: style({
+      flexDirection: 'row-reverse',
+    }),
+    column: style({
+      flexDirection: 'column',
+    }),
+    columnReverse: style({
+      flexDirection: 'column-reverse',
+    }),
+  },
   alignItems: {
     center: style({
       alignItems: 'center',

@@ -22,6 +22,6 @@ export const vars = createGlobalTheme(':root', {
     background: 'rgba(253,252,248, 1)',
   },
   font: {
-    body: 'arial',
+    body: 'Roboto Mono, monospace',
   },
 });
