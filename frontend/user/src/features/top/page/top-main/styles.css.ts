@@ -9,11 +9,11 @@ export const imageItem = style({
   height: 'auto',
 });
 
-export const flexContainer = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingTop: 20,
-  paddingLeft: 40,
-  paddingRight: 40,
-});
+// export const flexContainer = style({
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'space-between',
+//   paddingTop: 20,
+//   paddingLeft: 40,
+//   paddingRight: 40,
+// });

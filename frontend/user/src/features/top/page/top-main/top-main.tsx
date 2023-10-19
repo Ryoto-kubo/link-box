@@ -1,15 +1,15 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import { Button } from '@src/components';
+import { Button, Flex } from '@src/components';
 
-import { flexContainer, imageContainer, imageItem } from './styles.css';
+import { imageContainer, imageItem } from './styles.css';
 
 export const TopMain = () => {
   return (
     <div>
       <header>
-        <div className={clsx(flexContainer)}>
+        <Flex alignItems='center' justifyContent='spaceBetween'>
           <div className={clsx(imageContainer)}>
             <Image
               src='/images/logo.svg'
@@ -20,7 +20,7 @@ export const TopMain = () => {
             />
           </div>
           <Button text='Login' color='primary' />
-        </div>
+        </Flex>
       </header>
     </div>
   );
