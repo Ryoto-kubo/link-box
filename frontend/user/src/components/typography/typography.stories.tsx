@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Typography } from './index'
+import { Typography } from './index';
 
 const meta: Meta<typeof Typography> = {
   component: Typography,
@@ -8,10 +8,13 @@ const meta: Meta<typeof Typography> = {
     controls: { expanded: true },
   },
   title: 'components/typography',
-}
-export default meta
-type Story = StoryObj<typeof Flex>;
+};
+export default meta;
+type Story = StoryObj<typeof Typography>;
 
 export const Base: Story = {
-  args: {},
-}
+  args: {
+    variant: 'h1',
+    children: 'Typography',
+  },
+};
