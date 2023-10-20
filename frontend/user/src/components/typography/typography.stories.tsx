@@ -8,6 +8,12 @@ const meta: Meta<typeof Typography> = {
     controls: { expanded: true },
   },
   title: 'components/typography',
+  argTypes: {
+    variant: {
+      options: ['h1', 'h2', 'title'],
+      control: { type: 'radio' },
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<typeof Typography>;

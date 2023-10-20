@@ -9,7 +9,7 @@ export const typographyStyles: TypographyStyles = {
       fontWeight: 'bold',
     }),
     h2: style({
-      fontSize: 'clamp(1rem,10vw,3rem)',
+      fontSize: 'clamp(1rem,10vw, 2rem)',
       fontWeight: 'bold',
     }),
     title: style({

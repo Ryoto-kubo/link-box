@@ -6,12 +6,14 @@ import { TypographyProps } from './type';
 
 export const Typography = ({ variant, className, children }: TypographyProps) => {
   function component() {
-    if (variant === 'h1') {
-      return <h1 className={clsx(typographyStyles.variant[variant], className)}>{children}</h1>;
+    const Tag = variant;
+    if (variant === 'h1' || variant === 'h2') {
+      return <Tag className={clsx(typographyStyles.variant[variant], className)}>{children}</Tag>;
     }
     if (variant === 'title') {
       return <p className={clsx(typographyStyles.variant[variant], className)}>{children}</p>;
     }
   }
+
   return component();
 };

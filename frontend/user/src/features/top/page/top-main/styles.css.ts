@@ -15,10 +15,24 @@ export const logoItem = style({
   height: 'auto',
 });
 
+export const perspectiveContainer = style({
+  transformStyle: 'preserve-3d',
+  perspective: 800,
+});
+
+export const symbolContainer = style({
+  transition: 'all 0.2s linear 0s',
+});
+
 export const symbolItem = style({
   width: '100%',
   maxWidth: 380,
   height: 'auto',
+  '@media': {
+    'screen and (max-width: 480px)': {
+      maxWidth: 250,
+    },
+  },
 });
 
 export const mainContainer = style({
@@ -41,8 +55,16 @@ export const mainTitleContainer = style({
   '@media': {
     'screen and (max-width: 999px)': {
       marginRight: 0,
-      marginBottom: 24,
+      marginBottom: 32,
       textAlign: 'center',
+    },
+  },
+});
+
+export const mainTitleButtonContainer = style({
+  '@media': {
+    'screen and (max-width: 999px)': {
+      justifyContent: 'center',
     },
   },
 });
