@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
 
 import { Button, Flex, Typography } from '@src/components';
@@ -62,6 +63,8 @@ export const TopMain = () => {
     symbolContainerRef.current.style.transform = `rotateX(0deg) rotateY(0deg)`;
   }
 
+  const router = useRouter();
+
   return (
     <div>
       <header className={clsx(mb40)}>
@@ -79,7 +82,15 @@ export const TopMain = () => {
             <div>
               <Flex alignItems='center'>
                 <div className={clsx(mr16)}>
-                  <Button text='Login' color='primary' variant='text' />
+                  <Button
+                    text='Login'
+                    color='primary'
+                    variant='text'
+                    onClick={() => {
+                      // this is just for tentative handler
+                      router.push('/dashboard');
+                    }}
+                  />
                 </div>
                 <div>
                   <Button text='Signup' color='primary' />

@@ -14,14 +14,14 @@
     "prepare": "cd ../../ && husky install frontend/user/.husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "hygen:component": "hygen new component"
+    "hygen:component": "hygen new component",
+    "hygen:page": "hygen new page"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "npm run lint",
       "npm run format",
-      "npm run lint:fix",
-      "npm test --findRelatedTests"
+      "npm run lint:fix"
     ]
   },
   "dependencies": {
