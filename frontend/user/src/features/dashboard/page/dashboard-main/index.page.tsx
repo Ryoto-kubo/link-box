@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import Sidebar from '@src/components/sidebar/sidebar';
+
 const DashboardMainPage: React.FC = () => {
   const history = useRouter();
 
@@ -10,8 +12,7 @@ const DashboardMainPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Dashboard Main Page</h1>
-      <p>Welcome to the dashboard main page!</p>
+      <Sidebar />
       <button type='button' onClick={handleNavigateToTopPage}>
         Go to Top Page
       </button>
