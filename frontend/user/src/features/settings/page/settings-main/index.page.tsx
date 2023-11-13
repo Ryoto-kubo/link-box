@@ -1,14 +1,7 @@
 import React from 'react';
 
-import Sidebar from '@src/components/sidebar/sidebar';
-
 const SettingsMainPage: React.FC = () => {
-  return (
-    <div>
-      <Sidebar />
-      This is SettingsMainPage.
-    </div>
-  );
+  return <div>This is Settings MainPage.</div>;
 };
 
 export default SettingsMainPage;

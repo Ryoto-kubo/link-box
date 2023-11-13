@@ -5,9 +5,6 @@ import { vars } from '@src/styles/theme.css';
 export const sidebar = style({
   width: '240px',
   height: '100%',
-  position: 'fixed',
-  top: '0',
-  left: '0',
   boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   padding: '20px',
   borderRight: '1px solid #DDDDDDDD',
