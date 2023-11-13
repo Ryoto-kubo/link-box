@@ -1,9 +1,8 @@
-import { createGlobalTheme, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { vars } from '@src/styles/theme.css';
 
-export const teset = createGlobalTheme(':root', {
-  backgroundColor: '#F5F5F5',
+export const sidebar = style({
   width: '240px',
   height: '100%',
   position: 'fixed',
@@ -11,16 +10,8 @@ export const teset = createGlobalTheme(':root', {
   left: '0',
   boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   padding: '20px',
-});
-
-export const sidebar = style({
-  backgroundColor: teset.backgroundColor,
-  width: teset.width,
-  height: teset.height,
-  position: teset.position,
-  top: teset.top,
-  left: teset.left,
-  boxShadow: teset.boxShadow,
+  borderRight: '1px solid #DDDDDDDD',
+  boxSizing: 'border-box',
 });
 
 export const titleWrap = style({

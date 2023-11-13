@@ -2,13 +2,13 @@ import React from 'react';
 
 import Sidebar from '@src/components/sidebar/sidebar';
 
-const DashboardMainPage: React.FC = () => {
+const SettingsMainPage: React.FC = () => {
   return (
     <div>
       <Sidebar />
-      This is DashboardMainPage.
+      This is SettingsMainPage.
     </div>
   );
 };
 
-export default DashboardMainPage;
+export default SettingsMainPage;
