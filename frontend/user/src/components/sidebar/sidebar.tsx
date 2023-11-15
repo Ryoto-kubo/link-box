@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -6,9 +7,11 @@ import { LuLayoutDashboard } from 'react-icons/lu';
 import { MdLogout } from 'react-icons/md';
 
 import * as styles from './styles.css';
+import { SidebarProps } from './type';
 import { Typography } from '..';
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<SidebarProps> = (props) => {
+  const { className } = props;
   const links = [
     { name: 'Dashboard', href: '/dashboard', icon: <LuLayoutDashboard size='25' /> },
     { name: 'Settings', href: '/settings', icon: <GoGear size='25' /> },
@@ -18,7 +21,7 @@ const Sidebar: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.sidebar}>
+    <div className={clsx(styles.sidebar, className)}>
       <div className={styles.titleWrap}>
         <Typography variant='title' className={styles.title}>
           LinkBox

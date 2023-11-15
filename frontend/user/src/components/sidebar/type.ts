@@ -1,1 +1,3 @@
-export type SidebarProps = {};
+export type SidebarProps = {
+  className?: string;
+};

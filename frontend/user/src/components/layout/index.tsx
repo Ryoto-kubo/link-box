@@ -1,17 +1,45 @@
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import * as styles from './styles.css';
+import { Typography } from '..';
+import { Breadcrumb } from '../breadcrumb';
+import { BreadcrumbItem } from '../breadcrumb/type';
 import Sidebar from '../sidebar/sidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
+const generateBreadcrumbItems = (path: string): BreadcrumbItem[] => {
+  const paths = path.split('/').filter((p) => p);
+  let pathAccumulator = '';
+
+  return paths.map((segment, index) => {
+    pathAccumulator += `/${segment}`;
+    return {
+      label: segment.charAt(0).toUpperCase() + segment.slice(1), // 最初の文字を大文字に、残りはそのまま
+      href: pathAccumulator,
+    };
+  });
+};
+
 const Layout: FC<LayoutProps> = ({ children }) => {
+  const router = useRouter();
+  const breadcrumbItems = generateBreadcrumbItems(router.asPath);
+
+  const currentRouteName = breadcrumbItems[breadcrumbItems.length - 1].label;
+
   return (
     <div className={styles.LayoutWrap}>
-      <Sidebar />
-      <main>{children}</main>
+      <Sidebar className={styles.sidebarStyle} />
+      <div style={{ width: 'calc(100% - 240px)' }}>
+        <header className={styles.headerStyle}>
+          <Breadcrumb items={breadcrumbItems} />
+          <Typography variant='h2'>{currentRouteName}</Typography>
+        </header>
+        <main className={styles.mainStyle}>{children}</main>
+      </div>
     </div>
   );
 };
