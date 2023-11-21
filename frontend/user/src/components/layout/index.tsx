@@ -42,7 +42,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
               LinkBox
             </Typography>
           </div>
-          <Breadcrumb items={breadcrumbItems} />
+          {breadcrumbItems.length > 1 && <Breadcrumb items={breadcrumbItems} />}
           <Typography variant='h2'>{currentRouteName}</Typography>
         </header>
         <main className={styles.mainStyle}>{children}</main>
