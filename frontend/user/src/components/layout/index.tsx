@@ -5,6 +5,7 @@ import * as styles from './styles.css';
 import { Typography } from '..';
 import { Breadcrumb } from '../breadcrumb';
 import { BreadcrumbItem } from '../breadcrumb/type';
+import { Menu } from '../menu';
 import Sidebar from '../sidebar/sidebar';
 
 interface LayoutProps {
@@ -33,8 +34,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.LayoutWrap}>
       <Sidebar className={styles.sidebarStyle} />
-      <div style={{ width: 'calc(100% - 240px)' }}>
+      <div className={styles.contentWrap}>
         <header className={styles.headerStyle}>
+          <div className={styles.titleWrap}>
+            <Menu />
+            <Typography variant='title' className={styles.title}>
+              LinkBox
+            </Typography>
+          </div>
           <Breadcrumb items={breadcrumbItems} />
           <Typography variant='h2'>{currentRouteName}</Typography>
         </header>

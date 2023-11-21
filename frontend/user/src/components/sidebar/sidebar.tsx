@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { GoGear } from 'react-icons/go';
@@ -9,9 +8,10 @@ import { MdLogout } from 'react-icons/md';
 import * as styles from './styles.css';
 import { SidebarProps } from './type';
 import { Typography } from '..';
+import { Hamburger } from '../hamburger';
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
-  const { className } = props;
+  const { className, onClick } = props;
   const links = [
     { name: 'Dashboard', href: '/dashboard', icon: <LuLayoutDashboard size='25' /> },
     { name: 'Settings', href: '/settings', icon: <GoGear size='25' /> },
@@ -22,7 +22,8 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
 
   return (
     <div className={clsx(styles.sidebar, className)}>
-      <div className={styles.titleWrap}>
+      <div className={clsx(styles.titleWrap, onClick && styles.hasMenu)}>
+        {onClick && <Hamburger onClick={onClick} />}
         <Typography variant='title' className={styles.title}>
           LinkBox
         </Typography>
@@ -45,10 +46,20 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         ))}
       </nav>
       <div className={styles.logoutWrap}>
-        <li className={styles.navLinkItem}>
+        <div className={styles.navLinkItem}>
+          <button
+            type='button'
+            className={styles.linkButtonWrap}
+            onClick={() => {
+              router.push('/');
+            }}
+          >
+            <span className={styles.navButtonSapn}>sidebar navigation item button</span>
+          </button>
           <MdLogout size='25' />
-          <Link href={'/'}>Logout</Link>
-        </li>
+          <div className={styles.navLink}>Logout</div>
+        </div>
+        <div className={styles.navLinkItem}></div>
       </div>
     </div>
   );

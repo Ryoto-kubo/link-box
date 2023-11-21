@@ -9,13 +9,18 @@ export const sidebar = style({
   padding: '20px',
   borderRight: '1px solid #DDDDDDDD',
   boxSizing: 'border-box',
+  backgroundColor: '#fff',
 });
 
 export const titleWrap = style({
-  height: '80px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+});
+
+export const hasMenu = style({
+  justifyContent: 'flex-start',
+  gap: 10,
 });
 
 export const title = style({

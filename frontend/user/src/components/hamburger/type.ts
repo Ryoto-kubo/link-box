@@ -1,1 +1,3 @@
-export type HamburgerProps = {};
+export type HamburgerProps = {
+  onClick: () => void;
+};
