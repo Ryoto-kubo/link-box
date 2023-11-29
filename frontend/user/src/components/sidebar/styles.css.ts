@@ -10,6 +10,7 @@ export const sidebar = style({
   borderRight: '1px solid #DDDDDDDD',
   boxSizing: 'border-box',
   backgroundColor: '#fff',
+  flexDirection: 'column',
 });
 
 export const titleWrap = style({
@@ -30,10 +31,13 @@ export const title = style({
 });
 
 export const navLinkWrap = style({
+  flex: 1,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'space-between',
+  width: '100%',
+  position: 'relative',
 });
 
 export const navLinkItem = style({
@@ -69,10 +73,4 @@ export const navButtonSapn = style({
 
 export const navLink = style({
   color: vars.color.primaryMain,
-});
-
-export const logoutWrap = style({
-  position: 'absolute',
-  bottom: '20px',
-  left: '20px',
 });

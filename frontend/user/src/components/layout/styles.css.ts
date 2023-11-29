@@ -11,7 +11,7 @@ export const sidebarStyle = style({
   width: '240px',
   flexShrink: 0,
   minHeight: '100vh',
-  display: 'block',
+  display: 'flex',
   '@media': {
     'screen and (max-width: 999px)': {
       display: 'none',

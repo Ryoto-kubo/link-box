@@ -29,23 +29,23 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         </Typography>
       </div>
       <nav className={styles.navLinkWrap}>
-        {links.map((link) => (
-          <li className={styles.navLinkItem} key={link.name}>
-            <button
-              type='button'
-              className={styles.linkButtonWrap}
-              onClick={() => {
-                router.push(link.href);
-              }}
-            >
-              <span className={styles.navButtonSapn}>sidebar navigation item button</span>
-            </button>
-            {link.icon}
-            <div className={styles.navLink}>{link.name}</div>
-          </li>
-        ))}
-      </nav>
-      <div className={styles.logoutWrap}>
+        <div>
+          {links.map((link) => (
+            <li className={styles.navLinkItem} key={link.name}>
+              <button
+                type='button'
+                className={styles.linkButtonWrap}
+                onClick={() => {
+                  router.push(link.href);
+                }}
+              >
+                <span className={styles.navButtonSapn}>sidebar navigation item button</span>
+              </button>
+              {link.icon}
+              <div className={styles.navLink}>{link.name}</div>
+            </li>
+          ))}
+        </div>
         <div className={styles.navLinkItem}>
           <button
             type='button'
@@ -59,8 +59,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
           <MdLogout size='25' />
           <div className={styles.navLink}>Logout</div>
         </div>
-        <div className={styles.navLinkItem}></div>
-      </div>
+      </nav>
     </div>
   );
 };
