@@ -34,8 +34,8 @@ export const navLinkWrap = style({
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'space-between',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   width: '100%',
   position: 'relative',
 });
