@@ -1,9 +1,10 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Button, Flex, Typography } from '@src/components';
+import LoginModal from '@src/components/modal/components/login';
 import { mb20, mb32, mb40, mr16 } from '@src/styles/spacing.css';
 
 import {
@@ -63,6 +64,8 @@ export const TopMain = () => {
     symbolContainerRef.current.style.transform = `rotateX(0deg) rotateY(0deg)`;
   }
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const router = useRouter();
 
   return (
@@ -88,7 +91,8 @@ export const TopMain = () => {
                     variant='text'
                     onClick={() => {
                       // this is just for tentative handler
-                      router.push('/dashboard');
+                      // router.push('/dashboard');
+                      setIsOpen(true);
                     }}
                   />
                 </div>
@@ -136,6 +140,12 @@ export const TopMain = () => {
           </div>
         </Flex>
       </main>
+      <LoginModal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      />
     </div>
   );
 };

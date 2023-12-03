@@ -24,4 +24,9 @@ export const vars = createGlobalTheme(':root', {
   font: {
     body: 'Roboto Mono, monospace',
   },
+  zIndex: {
+    minus1: '-1',
+    1: '1',
+    1000: '1000',
+  },
 });
