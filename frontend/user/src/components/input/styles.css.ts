@@ -2,8 +2,8 @@ import { style } from '@vanilla-extract/css';
 
 export const inputWrapper = style({
   width: '100%',
-  height: '30px',
-  borderRadius: '4px',
+  height: '37.5px',
+  borderRadius: '8px',
   outline: '1px solid #C0C0C0',
   position: 'relative',
   ':focus-within': {
@@ -44,4 +44,24 @@ export const placeholderFocused = style({
   transition: 'all 0.2s',
   zIndex: 3,
   padding: '0 2px',
+});
+
+export const iconWrapper = style({
+  position: 'absolute',
+  right: '16px',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 3,
+  color: '#C0C0C0',
+});
+
+export const inputWrapperError = style({
+  outline: '2px solid red',
+});
+
+export const errorText = style({
+  fontSize: '14px',
+  color: 'red',
+  marginTop: '5px',
+  fontWeight: 900,
 });

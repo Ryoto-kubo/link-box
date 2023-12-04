@@ -41,7 +41,7 @@ export const modalWrapper = style({
   animation: `${appear} ${animationDuration} ease-in-out 0ms 1 forwards`,
   inset: 0,
   zIndex: vars.zIndex['1000'],
-  backdropFilter: 'blur(4px)',
+  backdropFilter: 'blur(2px)',
 });
 
 export const isModalClosing = style({
