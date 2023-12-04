@@ -13,5 +13,8 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Base: Story = {
-  args: {},
+  args: {
+    type: 'text',
+    label: 'Email',
+  },
 };

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { buttonStyles, layouts } from './styles.css';
+import { buttonStyles, layouts, buttonLayout, textStyle } from './styles.css';
 import { ButtonProps } from './type.js';
 
 export const Button = ({
@@ -10,6 +10,7 @@ export const Button = ({
   type = 'button',
   startIcon,
   endIcon,
+  isFullWidth,
   ...props
 }: ButtonProps) => {
   const isIcon = !!startIcon || !!endIcon;
@@ -18,10 +19,15 @@ export const Button = ({
     <button
       type={type}
       {...props}
-      className={clsx(buttonStyles.color[color].variant[variant], isIcon && layouts.flex)}
+      className={clsx(
+        buttonLayout,
+        buttonStyles.color[color].variant[variant],
+        isIcon && layouts.flex,
+      )}
+      style={{ width: isFullWidth ? '100%' : 'auto' }}
     >
       {startIcon && <div className={buttonStyles.iconPosition.start}>{startIcon.icon}</div>}
-      <div>{text}</div>
+      <div className={textStyle}>{text}</div>
       {endIcon && <div className={buttonStyles.iconPosition.end}>{endIcon.icon}</div>}
     </button>
   );

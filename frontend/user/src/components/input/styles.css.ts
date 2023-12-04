@@ -4,12 +4,11 @@ export const inputWrapper = style({
   width: '100%',
   height: '30px',
   borderRadius: '4px',
-  border: '1px solid black',
+  outline: '1px solid #C0C0C0',
   position: 'relative',
-});
-
-export const inputWrapperFocused = style({
-  borderColor: 'blue',
+  ':focus-within': {
+    outline: '2px solid #0080FF',
+  },
 });
 
 export const inputMain = style({
@@ -22,6 +21,8 @@ export const inputMain = style({
   left: 0,
   top: 0,
   padding: '0 16px',
+  boxSizing: 'border-box',
+  borderRadius: '4px',
 });
 
 export const placeholder = style({
@@ -32,7 +33,7 @@ export const placeholder = style({
   transform: 'translateY(-50%)',
   transition: 'all 0.2s',
   zIndex: 1,
-  backgroundColor: 'white',
+  backgroundColor: '#fff',
 });
 
 export const placeholderFocused = style({
@@ -41,4 +42,6 @@ export const placeholderFocused = style({
   top: '-1px',
   left: '8px',
   transition: 'all 0.2s',
+  zIndex: 3,
+  padding: '0 2px',
 });

@@ -1,38 +1,37 @@
 import clsx from 'clsx';
-import React, { useRef, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 
-import {
-  inputMain,
-  inputWrapper,
-  inputWrapperFocused,
-  placeholder,
-  placeholderFocused,
-} from './styles.css';
+import { inputMain, inputWrapper, placeholder, placeholderFocused } from './styles.css';
 import { InputProps } from './type';
 
-export const Input = (props: InputProps) => {
-  const { ...rest } = props;
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [isFocused, setIsFocused] = useState(false);
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { name, label, type, ...rest } = props;
+  const [hasContent, setHasContent] = useState(false);
 
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setHasContent(event.target.value.length > 0);
+    if (props.onChange) {
+      props.onChange(event);
+    }
   };
 
   return (
-    <div className={clsx(inputWrapper, isFocused && inputWrapperFocused)}>
-      <span className={clsx(placeholder, isFocused && placeholderFocused)}>Email</span>
+    <div className={inputWrapper}>
+      {label && (
+        <label htmlFor={name} className={clsx(placeholder, hasContent && placeholderFocused)}>
+          {label}
+        </label>
+      )}
       <input
-        ref={inputRef}
-        type={rest.type}
+        id={name}
+        ref={ref}
+        type={type}
         className={inputMain}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        onChange={handleChange}
+        {...rest}
       />
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';

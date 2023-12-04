@@ -55,12 +55,10 @@ export const modalMainBody = style({
   animationDelay: `calc(${animationDuration} + 50ms)`, // 50% of animationDuration
   animationName: `${appearFromTop}`,
   borderRadius: '4px',
-  height: '500px',
   boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
   padding: '20px',
   position: 'relative',
-  width: '100%',
-  maxWidth: '500px',
+  width: 'clamp(300px, 300px, 70%)',
   opacity: 0,
 });
 

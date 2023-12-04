@@ -71,6 +71,15 @@ export const buttonStyles: ButtonStyles = {
   },
 };
 
+export const buttonLayout = style({
+  cursor: 'pointer',
+  boxSizing: 'border-box',
+});
+
+export const textStyle = style({
+  textAlign: 'center',
+});
+
 export const layouts = {
   flex: style({
     display: 'flex',

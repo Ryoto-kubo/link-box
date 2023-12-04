@@ -10,6 +10,7 @@ export type ButtonProps = ComponentProps<'button'> & {
   endIcon?: {
     icon: JSX.Element;
   };
+  isFullWidth?: boolean;
 };
 
 export type ButtonColor = 'primary' | 'error';

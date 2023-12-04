@@ -1,7 +1,5 @@
-import { InputHTMLAttributes, ChangeEvent } from 'react';
+import { InputHTMLAttributes } from 'react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
 }

@@ -13,8 +13,8 @@ globalStyle('html, body', {
 globalStyle('button', {
   background: 'transparent',
   color: vars.color.textPrimaryMain,
-  borderRadius: 8,
-  padding: '6px 16px',
+  borderRadius: 4,
+  padding: '10px 16px',
   cursor: 'pointer',
   transition:
     'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
