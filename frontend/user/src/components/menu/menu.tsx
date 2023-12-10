@@ -1,16 +1,17 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
 
 import * as styles from './styles.css';
 import { Hamburger } from '../hamburger';
 import Sidebar from '../sidebar/sidebar';
 
 export const Menu = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggleOpen = () => {
+  function handleToggleOpen() {
     setIsOpen(!isOpen);
-  };
+  }
+
   return (
     <>
       <Hamburger onClick={handleToggleOpen} />

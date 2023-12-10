@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import React from 'react';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 import * as styles from './styles.css';
 import { BreadcrumbItem } from './type';
+import { CustomLink as Link } from '../Link/Link';
 
 type BreadcrumbProps = {
   items: BreadcrumbItem[];
