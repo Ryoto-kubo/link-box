@@ -51,9 +51,7 @@ const mockTypeName = (mock_name) => {
 
   // Responseから終わる場合は、その部分を"200ResponseInner"に変更する
   if (mock_name.endsWith('Response')) {
-    mock_name =
-      mock_name.substring(0, mock_name.length - 'Response'.length) +
-      '200ResponseInner'
+    mock_name = mock_name.substring(0, mock_name.length - 'Response'.length) + '200ResponseInner'
   }
 
   // 最初の文字を大文字にして、"Get"を前に追加する
@@ -100,7 +98,7 @@ module.exports = {
               name: 'hooks_name',
               message: `Is the name of the hooks ${defaultValueOfHooksName(
                 hooks_type,
-                api_client_name
+                api_client_name,
               )} ? Correct if necessary.`,
               default: defaultValueOfHooksName(hooks_type, api_client_name),
             },
@@ -108,7 +106,7 @@ module.exports = {
               type: 'input',
               name: 'mock_name',
               message: `Is the name of the mock ${defaultValueOfMockName(
-                api_client_name
+                api_client_name,
               )} ? Correct if necessary.`,
               default: `mock${defaultValueOfMockName(api_client_name)}Response`,
             },
@@ -122,9 +120,7 @@ module.exports = {
                 ? 'userApiDefaultApiFactory(instance)'
                 : 'iamDefaultApiFactory(instance)'
             const import_api_type_path =
-              api_type === 'USER_API'
-                ? '@src/api/generated/user-api'
-                : '@src/api/generated/iam'
+              api_type === 'USER_API' ? '@src/api/generated/user-api' : '@src/api/generated/iam'
             return {
               repository_path,
               repository_name,

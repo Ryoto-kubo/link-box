@@ -1,1 +1,1 @@
-export * from './top-main';
+export * from './top-main'

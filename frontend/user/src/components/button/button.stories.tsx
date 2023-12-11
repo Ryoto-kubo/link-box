@@ -1,8 +1,8 @@
-import { MdAdd } from 'react-icons/md';
+import { MdAdd } from 'react-icons/md'
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from './button';
+import { Button } from './button'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -17,17 +17,17 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Button>;
+export default meta
+type Story = StoryObj<typeof Button>
 
 export const Base: Story = {
   args: {
     text: 'Button',
     color: 'primary',
   },
-};
+}
 
 export const StartIconButton: Story = {
   args: {
@@ -37,7 +37,7 @@ export const StartIconButton: Story = {
       icon: <MdAdd size={20} />,
     },
   },
-};
+}
 
 export const EndIconButton: Story = {
   args: {
@@ -47,4 +47,4 @@ export const EndIconButton: Story = {
       icon: <MdAdd size={20} />,
     },
   },
-};
+}

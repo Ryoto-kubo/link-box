@@ -1,6 +1,6 @@
-import { MdDashboard } from 'react-icons/md';
+import { MdDashboard } from 'react-icons/md'
 
-import { Button } from '@src/components';
+import { Button } from '@src/components'
 
 export const SomeTestMain = () => {
   return (
@@ -15,5 +15,5 @@ export const SomeTestMain = () => {
         }}
       />
     </div>
-  );
-};
+  )
+}

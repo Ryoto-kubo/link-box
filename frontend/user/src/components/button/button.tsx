@@ -1,7 +1,7 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { buttonStyles, layouts } from './styles.css';
-import { ButtonProps } from './type.js';
+import { buttonStyles, layouts } from './styles.css'
+import { ButtonProps } from './type.js'
 
 export const Button = ({
   text,
@@ -12,7 +12,7 @@ export const Button = ({
   endIcon,
   ...props
 }: ButtonProps) => {
-  const isIcon = !!startIcon || !!endIcon;
+  const isIcon = !!startIcon || !!endIcon
 
   return (
     <button
@@ -24,5 +24,5 @@ export const Button = ({
       <div>{text}</div>
       {endIcon && <div className={buttonStyles.iconPosition.end}>{endIcon.icon}</div>}
     </button>
-  );
-};
+  )
+}

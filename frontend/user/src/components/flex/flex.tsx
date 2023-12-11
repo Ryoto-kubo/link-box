@@ -1,8 +1,8 @@
-import clsx from 'clsx';
-import React from 'react';
+import clsx from 'clsx'
+import React from 'react'
 
-import { flexStyles } from './styles.css';
-import { FlexProps } from './type';
+import { flexStyles } from './styles.css'
+import { FlexProps } from './type'
 
 export const Flex = ({
   direction = 'row',
@@ -23,5 +23,5 @@ export const Flex = ({
     >
       {children}
     </div>
-  );
-};
+  )
+}

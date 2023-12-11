@@ -1,8 +1,8 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
-import { vars } from '@src/styles/theme.css';
+import { vars } from '@src/styles/theme.css'
 
-import { ButtonStyles } from './type';
+import { ButtonStyles } from './type'
 
 export const buttonStyles: ButtonStyles = {
   color: {
@@ -69,11 +69,11 @@ export const buttonStyles: ButtonStyles = {
       display: 'inherit',
     }),
   },
-};
+}
 
 export const layouts = {
   flex: style({
     display: 'flex',
     alignItems: 'center',
   }),
-};
+}

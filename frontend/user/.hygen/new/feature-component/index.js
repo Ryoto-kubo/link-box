@@ -49,10 +49,7 @@ module.exports = {
           return directories
         }
 
-        const feature_path = path.join(
-          __dirname,
-          `../../../src/features/${feature_name}/`
-        )
+        const feature_path = path.join(__dirname, `../../../src/features/${feature_name}/`)
         const paths = convertToDirectoriesArray(feature_path)
 
         return inquirer
@@ -77,9 +74,7 @@ module.exports = {
             } else {
               abs_path = `src/features/${feature_name}/${path}/page/${component_name}`
             }
-            const storybook_path = abs_path
-              .replace('src/', '')
-              .replace('/page', '')
+            const storybook_path = abs_path.replace('src/', '').replace('/page', '')
             return {
               abs_path,
               storybook_path,
