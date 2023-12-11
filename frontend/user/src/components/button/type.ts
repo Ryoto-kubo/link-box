@@ -1,32 +1,32 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from 'react'
 
 export type ButtonProps = ComponentProps<'button'> & {
-  text: string;
-  color?: ButtonColor;
-  variant?: ButtonVariant;
+  text: string
+  color?: ButtonColor
+  variant?: ButtonVariant
   startIcon?: {
-    icon: JSX.Element;
-  };
+    icon: JSX.Element
+  }
   endIcon?: {
-    icon: JSX.Element;
-  };
-};
+    icon: JSX.Element
+  }
+}
 
-export type ButtonColor = 'primary' | 'error';
+export type ButtonColor = 'primary' | 'error'
 
-export type ButtonVariant = 'contained' | 'outlined' | 'text';
+export type ButtonVariant = 'contained' | 'outlined' | 'text'
 
-export type ButtonIconPosition = 'start' | 'end';
+export type ButtonIconPosition = 'start' | 'end'
 
 export type ButtonStyles = {
   ['color']: {
     [key in ButtonColor]: {
       ['variant']: {
-        [key in ButtonVariant]: string;
-      };
-    };
-  };
+        [key in ButtonVariant]: string
+      }
+    }
+  }
   ['iconPosition']: {
-    [key in ButtonIconPosition]: string;
-  };
-};
+    [key in ButtonIconPosition]: string
+  }
+}

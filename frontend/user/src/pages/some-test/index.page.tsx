@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 
-import { SomeTestPage } from '@src/features/some-test/page';
+import { SomeTestPage } from '@src/features/some-test/page'
 
 export const Page = () => {
-  return <SomeTestPage />;
-};
+  return <SomeTestPage />
+}
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return page;
-};
+  return page
+}
 
-export default Page;
+export default Page

@@ -1,16 +1,16 @@
-import React from 'react';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import React from 'react'
+import { MdOutlineArrowForwardIos } from 'react-icons/md'
 
-import * as styles from './styles.css';
-import { BreadcrumbItem } from './type';
-import { CustomLink as Link } from '../Link/Link';
+import * as styles from './styles.css'
+import { BreadcrumbItem } from './type'
+import { CustomLink as Link } from '../Link/Link'
 
 type BreadcrumbProps = {
-  items: BreadcrumbItem[];
-};
+  items: BreadcrumbItem[]
+}
 
 export const Breadcrumb = (props: BreadcrumbProps) => {
-  const { items } = props;
+  const { items } = props
   return (
     <nav aria-label='breadcrumb'>
       <ol className={styles.breadcrumb}>
@@ -34,5 +34,5 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
         ))}
       </ol>
     </nav>
-  );
-};
+  )
+}

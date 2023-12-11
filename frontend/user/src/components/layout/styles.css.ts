@@ -1,11 +1,11 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const LayoutWrap = style({
   display: 'flex',
   minHeight: '100vh',
   maxWidth: '1280px',
   margin: '0 auto',
-});
+})
 
 export const sidebarStyle = style({
   width: '240px',
@@ -17,7 +17,7 @@ export const sidebarStyle = style({
       display: 'none',
     },
   },
-});
+})
 
 export const titleWrap = style({
   display: 'none',
@@ -28,16 +28,16 @@ export const titleWrap = style({
       alignItems: 'center',
     },
   },
-});
+})
 
 export const title = style({
   fontSize: '30px !important',
-});
+})
 
 export const navigationWrap = style({
   position: 'absolute',
   minHeight: '100vh',
-});
+})
 
 export const headerStyle = style({
   width: '100%',
@@ -47,7 +47,7 @@ export const headerStyle = style({
   padding: '20px',
   boxSizing: 'border-box',
   gap: '1rem',
-});
+})
 
 export const contentWrap = style({
   display: 'flex',
@@ -55,7 +55,7 @@ export const contentWrap = style({
   flexDirection: 'column',
   width: '100%',
   minHeight: '100vh',
-});
+})
 
 export const mainStyle = style({
   flexGrow: 1,
@@ -65,4 +65,4 @@ export const mainStyle = style({
   width: '100%',
   alignItems: 'center',
   justifyContent: 'center',
-});
+})

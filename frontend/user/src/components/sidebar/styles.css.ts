@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
-import { vars } from '@src/styles/theme.css';
+import { vars } from '@src/styles/theme.css'
 
 export const sidebar = style({
   width: '240px',
@@ -11,24 +11,24 @@ export const sidebar = style({
   boxSizing: 'border-box',
   backgroundColor: '#fff',
   flexDirection: 'column',
-});
+})
 
 export const titleWrap = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-});
+})
 
 export const hasMenu = style({
   justifyContent: 'flex-start',
   gap: 10,
-});
+})
 
 export const title = style({
   fontSize: '30px !important',
   textAlign: 'center',
   color: vars.color.primaryMain,
-});
+})
 
 export const navLinkWrap = style({
   flex: 1,
@@ -38,7 +38,7 @@ export const navLinkWrap = style({
   alignItems: 'center',
   width: '100%',
   position: 'relative',
-});
+})
 
 export const navLinkItem = style({
   listStyle: 'none',
@@ -58,19 +58,19 @@ export const navLinkItem = style({
     borderRadius: '10px',
     transition: 'all 0.3s ease',
   },
-});
+})
 
 export const linkButtonWrap = style({
   position: 'absolute',
   inset: 0,
-});
+})
 
 export const navButtonSapn = style({
   position: 'absolute',
   inset: 0,
   display: 'none',
-});
+})
 
 export const navLink = style({
   color: vars.color.primaryMain,
-});
+})

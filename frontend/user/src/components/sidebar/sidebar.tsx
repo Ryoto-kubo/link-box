@@ -1,22 +1,22 @@
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import React from 'react';
+import clsx from 'clsx'
+import { useRouter } from 'next/router'
+import React from 'react'
 
-import * as styles from './styles.css';
-import { SidebarLinks, SidebarProps } from './type';
-import { Typography } from '..';
-import { Hamburger } from '../hamburger';
-import { CustomLink as Link } from '../Link/Link';
+import * as styles from './styles.css'
+import { SidebarLinks, SidebarProps } from './type'
+import { Typography } from '..'
+import { Hamburger } from '../hamburger'
+import { CustomLink as Link } from '../Link/Link'
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
-  const { className, onClick } = props;
+  const { className, onClick } = props
   const links: SidebarLinks[] = [
     { name: 'Dashboard', href: '/dashboard', icon: 'dashboard' },
     { name: 'Settings', href: '/settings', icon: 'gear' },
     // 他のリンクをここに追加
-  ];
+  ]
 
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div className={clsx(styles.sidebar, className)}>
@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

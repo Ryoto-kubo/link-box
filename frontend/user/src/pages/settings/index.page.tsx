@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from 'react'
 
-import Layout from '@src/components/layout';
-import SettingsMainPage from '@src/features/settings/page/settings-main/index.page';
+import Layout from '@src/components/layout'
+import SettingsMainPage from '@src/features/settings/page/settings-main/index.page'
 
 export const Page = () => {
-  return <SettingsMainPage />;
-};
+  return <SettingsMainPage />
+}
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
-export default Page;
+export default Page

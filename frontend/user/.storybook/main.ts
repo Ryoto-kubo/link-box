@@ -1,7 +1,7 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from '@storybook/nextjs'
 
-import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -54,5 +54,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-};
-export default config;
+}
+export default config

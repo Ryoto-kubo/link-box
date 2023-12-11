@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React, { useRef } from 'react';
+import clsx from 'clsx'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React, { useRef } from 'react'
 
-import { Button, Flex, Typography } from '@src/components';
-import { mb20, mb32, mb40, mr16 } from '@src/styles/spacing.css';
+import { Button, Flex, Typography } from '@src/components'
+import { mb20, mb32, mb40, mr16 } from '@src/styles/spacing.css'
 
 import {
   firstViewContainer,
@@ -17,53 +17,53 @@ import {
   perspectiveContainer,
   symbolContainer,
   symbolItem,
-} from './styles.css';
+} from './styles.css'
 
 export const TopMain = () => {
-  const symbolContainerRef = useRef<HTMLImageElement>(null);
+  const symbolContainerRef = useRef<HTMLImageElement>(null)
 
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (!symbolContainerRef.current) return;
+    if (!symbolContainerRef.current) return
 
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) return;
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    if (isMobile) return
 
     // Imageのサイズ
-    const imageWidth = 380;
-    const imageHeight = 380;
+    const imageWidth = 380
+    const imageHeight = 380
 
     // Imageの中心を計算
-    const imageCenterX = imageWidth / 2;
-    const imageCenterY = imageHeight / 2;
+    const imageCenterX = imageWidth / 2
+    const imageCenterY = imageHeight / 2
 
     // カーソルの現在の位置を取得
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+    const mouseX = event.clientX
+    const mouseY = event.clientY
 
     // symbolContainerの位置を取得
-    const containerBounds = symbolContainerRef.current.getBoundingClientRect();
-    const containerX = containerBounds.left;
-    const containerY = containerBounds.top;
+    const containerBounds = symbolContainerRef.current.getBoundingClientRect()
+    const containerX = containerBounds.left
+    const containerY = containerBounds.top
 
     // カーソルがImageの中心からどれだけ動いているかを算出
-    const offsetX = mouseX - (containerX + imageCenterX);
-    const offsetY = mouseY - (containerY + imageCenterY);
+    const offsetX = mouseX - (containerX + imageCenterX)
+    const offsetY = mouseY - (containerY + imageCenterY)
 
     // offsetYに基づいてX軸の回転角度を計算
     // offsetXに基づいてY軸の回転角度を計算
-    const rotateX = Math.min(10, Math.max(-10, -(offsetY / imageCenterY) * 10)); // 符号を反転させました
-    const rotateY = Math.min(10, Math.max(-10, (offsetX / imageCenterX) * 10)); // 符号を反転させました
+    const rotateX = Math.min(10, Math.max(-10, -(offsetY / imageCenterY) * 10)) // 符号を反転させました
+    const rotateY = Math.min(10, Math.max(-10, (offsetX / imageCenterX) * 10)) // 符号を反転させました
 
     // symbolContainerRefのrotateXとrotateYを更新
-    symbolContainerRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    symbolContainerRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
   }
 
   function handleMouseLeave() {
-    if (!symbolContainerRef.current) return;
-    symbolContainerRef.current.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    if (!symbolContainerRef.current) return
+    symbolContainerRef.current.style.transform = `rotateX(0deg) rotateY(0deg)`
   }
 
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <div>
@@ -88,7 +88,7 @@ export const TopMain = () => {
                     variant='text'
                     onClick={() => {
                       // this is just for tentative handler
-                      router.push('/dashboard');
+                      router.push('/dashboard')
                     }}
                   />
                 </div>
@@ -137,5 +137,5 @@ export const TopMain = () => {
         </Flex>
       </main>
     </div>
-  );
-};
+  )
+}

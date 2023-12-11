@@ -1,2 +1,2 @@
-import { CustomLink } from './Link';
-export default CustomLink;
+import { CustomLink } from './Link'
+export default CustomLink

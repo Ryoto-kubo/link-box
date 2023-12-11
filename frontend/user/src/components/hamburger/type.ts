@@ -1,3 +1,3 @@
 export type HamburgerProps = {
-  onClick: () => void;
-};
+  onClick: () => void
+}

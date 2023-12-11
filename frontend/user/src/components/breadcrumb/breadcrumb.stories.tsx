@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Breadcrumb } from './index';
+import { Breadcrumb } from './index'
 
 const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
@@ -8,9 +8,9 @@ const meta: Meta<typeof Breadcrumb> = {
     controls: { expanded: true },
   },
   title: 'components/breadcrumb',
-};
-export default meta;
-type Story = StoryObj<typeof Breadcrumb>;
+}
+export default meta
+type Story = StoryObj<typeof Breadcrumb>
 
 export const Base: Story = {
   args: {
@@ -20,4 +20,4 @@ export const Base: Story = {
       { label: 'Product 1', href: '/products/1' },
     ],
   },
-};
+}

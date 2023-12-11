@@ -1,4 +1,4 @@
 export type MenuProps = {
-  isOpen: boolean;
-  onClick: () => void;
-};
+  isOpen: boolean
+  onClick: () => void
+}

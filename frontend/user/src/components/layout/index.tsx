@@ -1,35 +1,35 @@
-import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { useRouter } from 'next/router'
+import { FC } from 'react'
 
-import * as styles from './styles.css';
-import { Typography } from '..';
-import { Breadcrumb } from '../breadcrumb';
-import { BreadcrumbItem } from '../breadcrumb/type';
-import { Menu } from '../menu';
-import Sidebar from '../sidebar/sidebar';
+import * as styles from './styles.css'
+import { Typography } from '..'
+import { Breadcrumb } from '../breadcrumb'
+import { BreadcrumbItem } from '../breadcrumb/type'
+import { Menu } from '../menu'
+import Sidebar from '../sidebar/sidebar'
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const generateBreadcrumbItems = (path: string): BreadcrumbItem[] => {
-  const paths = path.split('/').filter((p) => p);
-  let pathAccumulator = '';
+  const paths = path.split('/').filter((p) => p)
+  let pathAccumulator = ''
 
   return paths.map((segment, index) => {
-    pathAccumulator += `/${segment}`;
+    pathAccumulator += `/${segment}`
     return {
       label: segment.charAt(0).toUpperCase() + segment.slice(1), // 最初の文字を大文字に、残りはそのまま
       href: pathAccumulator,
-    };
-  });
-};
+    }
+  })
+}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const router = useRouter();
-  const breadcrumbItems = generateBreadcrumbItems(router.asPath);
+  const router = useRouter()
+  const breadcrumbItems = generateBreadcrumbItems(router.asPath)
 
-  const currentRouteName = breadcrumbItems[breadcrumbItems.length - 1].label;
+  const currentRouteName = breadcrumbItems[breadcrumbItems.length - 1].label
 
   return (
     <div className={styles.LayoutWrap}>
@@ -48,7 +48,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <main className={styles.mainStyle}>{children}</main>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

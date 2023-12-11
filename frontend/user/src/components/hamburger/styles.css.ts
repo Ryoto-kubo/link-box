@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const hamburger = style({
   display: 'flex',
@@ -13,7 +13,7 @@ export const hamburger = style({
   ':focus': {
     outline: 'none',
   },
-});
+})
 
 export const hamburgerLine = style({
   width: '20px',
@@ -21,4 +21,4 @@ export const hamburgerLine = style({
   background: 'black',
   borderRadius: '3px',
   transition: 'all 0.5s ease',
-});
+})

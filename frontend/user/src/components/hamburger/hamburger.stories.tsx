@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Hamburger } from './index';
+import { Hamburger } from './index'
 
 const meta: Meta<typeof Hamburger> = {
   component: Hamburger,
@@ -8,11 +8,11 @@ const meta: Meta<typeof Hamburger> = {
     controls: { expanded: true },
   },
   title: 'components/hamburger',
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Hamburger>;
+export default meta
+type Story = StoryObj<typeof Hamburger>
 
 export const Base: Story = {
   args: {},
-};
+}

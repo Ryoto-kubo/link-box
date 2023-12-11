@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Flex } from './index';
+import { Flex } from './index'
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
@@ -8,10 +8,10 @@ const meta: Meta<typeof Flex> = {
     controls: { expanded: true },
   },
   title: 'components/flex',
-};
-export default meta;
-type Story = StoryObj<typeof Flex>;
+}
+export default meta
+type Story = StoryObj<typeof Flex>
 
 export const Base: Story = {
   args: {},
-};
+}

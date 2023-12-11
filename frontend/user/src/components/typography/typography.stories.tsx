@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Typography } from './index';
+import { Typography } from './index'
 
 const meta: Meta<typeof Typography> = {
   component: Typography,
@@ -14,13 +14,13 @@ const meta: Meta<typeof Typography> = {
       control: { type: 'radio' },
     },
   },
-};
-export default meta;
-type Story = StoryObj<typeof Typography>;
+}
+export default meta
+type Story = StoryObj<typeof Typography>
 
 export const Base: Story = {
   args: {
     variant: 'h1',
     children: 'Typography',
   },
-};
+}

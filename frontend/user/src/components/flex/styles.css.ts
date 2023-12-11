@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
-import { FlexStyles } from './type';
+import { FlexStyles } from './type'
 
 export const flexStyles: FlexStyles = {
   flex: style({
@@ -51,4 +51,4 @@ export const flexStyles: FlexStyles = {
       justifyContent: 'flex-end',
     }),
   },
-};
+}

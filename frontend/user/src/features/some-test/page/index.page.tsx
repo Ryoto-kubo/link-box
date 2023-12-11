@@ -1,5 +1,5 @@
-import { SomeTestMain } from './some-test-main';
+import { SomeTestMain } from './some-test-main'
 
 export const SomeTestPage = () => {
-  return <SomeTestMain />;
-};
+  return <SomeTestMain />
+}

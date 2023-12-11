@@ -1,6 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
-import { TypographyStyles } from './type';
+import { TypographyStyles } from './type'
 
 export const typographyStyles: TypographyStyles = {
   variant: {
@@ -16,4 +16,4 @@ export const typographyStyles: TypographyStyles = {
       fontSize: 20,
     }),
   },
-};
+}

@@ -1,27 +1,27 @@
-import Link, { LinkProps } from 'next/link';
-import React from 'react';
-import { GoGear } from 'react-icons/go';
-import { LuLayoutDashboard } from 'react-icons/lu';
-import { MdLogout } from 'react-icons/md';
+import Link, { LinkProps } from 'next/link'
+import React from 'react'
+import { GoGear } from 'react-icons/go'
+import { LuLayoutDashboard } from 'react-icons/lu'
+import { MdLogout } from 'react-icons/md'
 
 const ICONS = {
   gear: GoGear,
   dashboard: LuLayoutDashboard,
   logout: MdLogout,
   // 他のアイコンを適宜ここに追加する。
-};
+}
 
-export type LINK_ICONS = keyof typeof ICONS;
+export type LINK_ICONS = keyof typeof ICONS
 
 type CustomLinkProps = LinkProps &
   React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    icon?: keyof typeof ICONS;
-    iconSize?: number;
-  };
+    icon?: keyof typeof ICONS
+    iconSize?: number
+  }
 
 export const CustomLink: React.FC<CustomLinkProps> = ({ children, icon, iconSize, ...props }) => {
-  const { href, as, passHref, replace, scroll, shallow, prefetch, locale, ...anchorProps } = props;
-  const IconComponent = icon ? ICONS[icon] : null;
+  const { href, as, passHref, replace, scroll, shallow, prefetch, locale, ...anchorProps } = props
+  const IconComponent = icon ? ICONS[icon] : null
 
   return (
     <Link
@@ -49,5 +49,5 @@ export const CustomLink: React.FC<CustomLinkProps> = ({ children, icon, iconSize
         {children}
       </span>
     </Link>
-  );
-};
+  )
+}
